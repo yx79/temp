@@ -80,7 +80,7 @@ NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = x86_64-unknown-linux-gnu
-host_triplet = i686-w64-mingw32
+host_triplet = i686-w64-mingw32.static
 noinst_PROGRAMS = $(am__EXEEXT_1) $(am__EXEEXT_2) $(am__EXEEXT_3) \
 	$(am__EXEEXT_4) $(am__EXEEXT_5)
 #am__append_1 = bench_verify bench_sign bench_internal
@@ -511,7 +511,7 @@ am__set_TESTS_bases = \
   bases=`echo $$bases`
 RECHECK_LOGS = $(TEST_LOGS)
 TEST_SUITE_LOG = test-suite.log
-TEST_EXTENSIONS = .exe .test
+TEST_EXTENSIONS =  .test
 LOG_DRIVER = $(SHELL) $(top_srcdir)/build-aux/test-driver
 LOG_COMPILE = $(LOG_COMPILER) $(AM_LOG_FLAGS) $(LOG_FLAGS)
 am__set_b = \
@@ -525,7 +525,7 @@ am__set_b = \
       b='$*';; \
   esac
 am__test_logs1 = $(TESTS:=.log)
-am__test_logs2 = $(am__test_logs1:.exe.log=.log)
+am__test_logs2 = $(am__test_logs1:.log=.log)
 TEST_LOGS = $(am__test_logs2:.test.log=.log)
 TEST_LOG_DRIVER = $(SHELL) $(top_srcdir)/build-aux/test-driver
 TEST_LOG_COMPILE = $(TEST_LOG_COMPILER) $(AM_TEST_LOG_FLAGS) \
@@ -547,42 +547,42 @@ distuninstallcheck_listfiles = find . -type f -print
 am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) \
   | sed 's|^\./|$(prefix)/|' | grep -v '$(infodir)/dir$$'
 distcleancheck_listfiles = find . -type f -print
-ACLOCAL = ${SHELL} /home/happy/Desktop/bitcoin-0.13.2/src/secp256k1/build-aux/missing aclocal-1.14
+ACLOCAL = ${SHELL} /home/eighthcoin/1/2/temp/build-aux/missing aclocal-1.14
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
-AR = /usr/bin/i686-w64-mingw32-ar
-AUTOCONF = ${SHELL} /home/happy/Desktop/bitcoin-0.13.2/src/secp256k1/build-aux/missing autoconf
-AUTOHEADER = ${SHELL} /home/happy/Desktop/bitcoin-0.13.2/src/secp256k1/build-aux/missing autoheader
-AUTOMAKE = ${SHELL} /home/happy/Desktop/bitcoin-0.13.2/src/secp256k1/build-aux/missing automake-1.14
-AWK = mawk
+AR = /usr/bin/ar
+AUTOCONF = ${SHELL} /home/eighthcoin/1/2/temp/build-aux/missing autoconf
+AUTOHEADER = ${SHELL} /home/eighthcoin/1/2/temp/build-aux/missing autoheader
+AUTOMAKE = ${SHELL} /home/eighthcoin/1/2/temp/build-aux/missing automake-1.14
+AWK = gawk
 BREW = 
 BUILD_EXEEXT = 
 BUILD_OBJEXT = 
-CC = i686-w64-mingw32-gcc
-CCAS = i686-w64-mingw32-gcc
+CC = gcc
+CCAS = gcc
 CCASDEPMODE = depmode=gcc3
-CCASFLAGS = -pipe -O2 
+CCASFLAGS = -g -O2
 CCDEPMODE = depmode=gcc3
 CC_FOR_BUILD = gcc
-CFLAGS = -pipe -O2  -W -std=c89 -pedantic -Wall -Wextra -Wcast-align -Wnested-externs -Wshadow -Wstrict-prototypes -Wno-unused-function -Wno-long-long -Wno-overlength-strings -fvisibility=hidden
+CFLAGS = -g -O2 -W -std=c89 -pedantic -Wall -Wextra -Wcast-align -Wnested-externs -Wshadow -Wstrict-prototypes -Wno-unused-function -Wno-long-long -Wno-overlength-strings -fvisibility=hidden
 CFLAGS_FOR_BUILD = -g -O2 $(am__append_7)
-CPP = i686-w64-mingw32-gcc -E
-CPPFLAGS = -I/home/happy/Desktop/bitcoin-0.13.2/depends/i686-w64-mingw32/share/../include/ 
+CPP = gcc -E
+CPPFLAGS = 
 CPPFLAGS_FOR_BUILD =  $(am__append_6)
 CPP_FOR_BUILD = gcc -E
-CRYPTO_CFLAGS = -I/home/happy/Desktop/bitcoin-0.13.2/depends/i686-w64-mingw32/include  
-CRYPTO_LIBS = -L/home/happy/Desktop/bitcoin-0.13.2/depends/i686-w64-mingw32/lib -lcrypto -lws2_32 -lgdi32 -lcrypt32  
+CRYPTO_CFLAGS =  
+CRYPTO_LIBS = -lcrypto  
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
-DLLTOOL = i686-w64-mingw32-dlltool
+DLLTOOL = false
 DSYMUTIL = 
-DUMPBIN = 
+DUMPBIN = :
 ECHO_C = 
 ECHO_N = -n
 ECHO_T = 
 EGREP = /bin/grep -E
-EXEEXT = .exe
+EXEEXT = 
 FGREP = /bin/grep -F
 GREP = /bin/grep
 INSTALL = /usr/bin/install -c
@@ -591,8 +591,8 @@ INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 JNI_INCLUDES = 
-LD = /usr/bin/i686-w64-mingw32-ld
-LDFLAGS = -L/home/happy/Desktop/bitcoin-0.13.2/depends/i686-w64-mingw32/share/../lib 
+LD = /usr/bin/ld
+LDFLAGS = 
 LDFLAGS_FOR_BUILD = 
 LIBOBJS = 
 LIBS = 
@@ -600,12 +600,12 @@ LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIPO = 
 LN_S = ln -s
 LTLIBOBJS = 
-MAKEINFO = ${SHELL} /home/happy/Desktop/bitcoin-0.13.2/src/secp256k1/build-aux/missing makeinfo
+MAKEINFO = ${SHELL} /home/eighthcoin/1/2/temp/build-aux/missing makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /bin/mkdir -p
-NM = i686-w64-mingw32-nm
+NM = nm
 NMEDIT = 
-OBJDUMP = i686-w64-mingw32-objdump
+OBJDUMP = objdump
 OBJEXT = o
 OTOOL = 
 OTOOL64 = 
@@ -617,29 +617,29 @@ PACKAGE_TARNAME = libsecp256k1
 PACKAGE_URL = 
 PACKAGE_VERSION = 0.1
 PATH_SEPARATOR = :
-PKG_CONFIG = /usr/bin/pkg-config --static
-PKG_CONFIG_LIBDIR = /home/happy/Desktop/bitcoin-0.13.2/depends/i686-w64-mingw32/share/../lib/pkgconfig
-PKG_CONFIG_PATH = /home/happy/Desktop/bitcoin-0.13.2/depends/i686-w64-mingw32/share/../share/pkgconfig
+PKG_CONFIG = /usr/bin/pkg-config
+PKG_CONFIG_LIBDIR = 
+PKG_CONFIG_PATH = 
 PORT = 
-RANLIB = /usr/bin/i686-w64-mingw32-ranlib
+RANLIB = /usr/bin/ranlib
 SECP_INCLUDES = 
 SECP_LIBS = 
-SECP_TEST_INCLUDES =  -I/home/happy/Desktop/bitcoin-0.13.2/depends/i686-w64-mingw32/include  
-SECP_TEST_LIBS = -L/home/happy/Desktop/bitcoin-0.13.2/depends/i686-w64-mingw32/lib -lcrypto -lws2_32 -lgdi32 -lcrypt32   -lgdi32
+SECP_TEST_INCLUDES =   
+SECP_TEST_LIBS = -lcrypto   
 SED = /bin/sed
 SET_MAKE = 
 SHELL = /bin/bash
-STRIP = /usr/bin/i686-w64-mingw32-strip
+STRIP = /usr/bin/strip
 VERSION = 0.1
 _ACJNI_JAVAC = no
-abs_builddir = /home/happy/Desktop/bitcoin-0.13.2/src/secp256k1
-abs_srcdir = /home/happy/Desktop/bitcoin-0.13.2/src/secp256k1
-abs_top_builddir = /home/happy/Desktop/bitcoin-0.13.2/src/secp256k1
-abs_top_srcdir = /home/happy/Desktop/bitcoin-0.13.2/src/secp256k1
-ac_ct_AR = 
-ac_ct_CC = 
+abs_builddir = /home/eighthcoin/1/2/temp
+abs_srcdir = /home/eighthcoin/1/2/temp
+abs_top_builddir = /home/eighthcoin/1/2/temp
+abs_top_srcdir = /home/eighthcoin/1/2/temp
+ac_ct_AR = ar
+ac_ct_CC = gcc
 ac_ct_CC_FOR_BUILD = gcc
-ac_ct_DUMPBIN = 
+ac_ct_DUMPBIN = link -dump
 am__include = include
 am__leading_dot = .
 am__quote = 
@@ -657,15 +657,15 @@ datarootdir = ${prefix}/share
 docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}
 dvidir = ${docdir}
 exec_prefix = ${prefix}
-host = i686-w64-mingw32
-host_alias = i686-w64-mingw32
+host = i686-w64-mingw32.static
+host_alias = i686-w64-mingw32.static
 host_cpu = i686
-host_os = mingw32
+host_os = mingw32.static
 host_vendor = w64
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/happy/Desktop/bitcoin-0.13.2/src/secp256k1/build-aux/install-sh
+install_sh = ${SHELL} /home/eighthcoin/1/2/temp/build-aux/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -674,7 +674,7 @@ mandir = ${datarootdir}/man
 mkdir_p = $(MKDIR_P)
 oldincludedir = /usr/include
 pdfdir = ${docdir}
-prefix = /
+prefix = /usr/local
 program_transform_name = s,x,x,
 psdir = ${docdir}
 sbindir = ${exec_prefix}/sbin
@@ -1336,13 +1336,13 @@ exhaustive_tests.log: exhaustive_tests$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_TEST_LOG_DRIVER_FLAGS) $(TEST_LOG_DRIVER_FLAGS) -- $(TEST_LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
-.test$(EXEEXT).log:
-	@p='$<'; \
-	$(am__set_b); \
-	$(am__check_pre) $(TEST_LOG_DRIVER) --test-name "$$f" \
-	--log-file $$b.log --trs-file $$b.trs \
-	$(am__common_driver_flags) $(AM_TEST_LOG_DRIVER_FLAGS) $(TEST_LOG_DRIVER_FLAGS) -- $(TEST_LOG_COMPILE) \
-	"$$tst" $(AM_TESTS_FD_REDIRECT)
+#.test$(EXEEXT).log:
+#	@p='$<'; \
+#	$(am__set_b); \
+#	$(am__check_pre) $(TEST_LOG_DRIVER) --test-name "$$f" \
+#	--log-file $$b.log --trs-file $$b.trs \
+#	$(am__common_driver_flags) $(AM_TEST_LOG_DRIVER_FLAGS) $(TEST_LOG_DRIVER_FLAGS) -- $(TEST_LOG_COMPILE) \
+#	"$$tst" $(AM_TESTS_FD_REDIRECT)
 
 distdir: $(DISTFILES)
 	$(am__remove_distdir)
