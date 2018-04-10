@@ -40,11 +40,7 @@
 
 static int count = 64;
 static secp256k1_context *ctx = NULL;
-
-struct ECDSA_SIG_st {
-   BIGNUM *r;
-   BIGNUM *s;
-}
+ 
 
 static void counting_illegal_callback_fn(const char* str, void* data) {
     /* Dummy callback function that just counts. */
